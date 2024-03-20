@@ -1,0 +1,32 @@
+
+def graph_color(graph, color_no, result, node):
+    # write your code to terminate the recursion
+    # if there is no zero in the result dict, return true
+
+    # write a nested loop to assign legal colors to the nodes
+    # loop through all colors
+    # again loop through all neighbours of the current node
+    # check if it is possible to assign the color to the node
+    # if not possible, then conitnue second loop considering the color is not valid
+    # if possible, then call the function to assign a color to the next node
+    # return proper value with appropriate conditions          
+
+
+if __name__ == '__main__':    
+    node_no = 4
+    color_no = 3
+
+    #colors = [0, 0, 0, 0]
+    result = {1:0, 2:0, 3:0, 4:0}
+
+    graph = { 1 : [2, 3, 4],
+              2 : [1, 3],
+              3 : [1, 2, 4],
+              4 : [1, 3] }
+
+    isColoringPossible = graph_color(graph, color_no, result, 1)
+
+    if isColoringPossible == True:
+        print(result)
+    else:
+        print("no solution exists...")
